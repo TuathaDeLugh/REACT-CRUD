@@ -42,7 +42,7 @@ const Edituser = () => {
         console.log(user);
     }
     const edituserdetails = async() =>{
-       await edituser(user);
+       await edituser(user,id);
        navigate('/all');
     }
     return (
