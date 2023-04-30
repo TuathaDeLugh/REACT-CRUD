@@ -19,9 +19,9 @@ export const getuser = async() =>{
     }
 
 }
-export const edituser = async(data) =>{
+export const edituser = async(user,id) =>{
     try{
-       return await axios.post(`${URL}/edit`,data);
+       return await axios.put(`${URL}/${id}`,user);
     }
     catch(error){
             console.log('edit user api call error',error);
@@ -34,5 +34,14 @@ export const getoneuser = async(id) =>{
     }
     catch(error){
         console.log('one user api call error',error);
+    }
+}
+export const deleteuser =  async(id) =>{
+    try{
+        return await axios.delete(`${URL}/${id}`);
+    }
+    catch(error)
+    {
+        console.log('delete api error',error);
     }
 }
